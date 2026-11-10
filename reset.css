@@ -1,48 +1,92 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* ==========================================================================
+   Reset & Base Styles - Front-End Intermediate Level
+   ========================================================================== */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+/* 1. Box-sizing universal
+   Garante que padding e border não alterem o tamanho final dos elementos. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+/* 2. Remoção de margens e paddings padrão nos elementos mais comuns */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+figure,
+blockquote,
+dl, dd,
+ul, ol {
+  margin: 0;
+  padding: 0;
 }
+
+/* 3. Ajustes de tipografia e renderização no Body */
 body {
-	line-height: 1;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Suavização de fontes no Safari/macOS */
+  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  text-rendering: optimizeLegibility;
 }
-ol, ul {
-	list-style: none;
+
+/* 4. Listas sem marcadores por padrão */
+ul, ol {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+/* 5. Imagens e mídias responsivas por padrão */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+/* 6. Herança de fonte em formulários e botões */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+/* 7. Melhoria na usabilidade de botões e links */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 8. Evita overflow de texto em títulos e parágrafos */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Respeito às preferências de movimento do usuário (Acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
