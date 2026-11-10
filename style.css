@@ -1,65 +1,153 @@
-body { 
-    background-color: white;
-    font-size: 16px;
+/* ==========================================================================
+   Variáveis Globais (Paleta de Cores e Fontes)
+   ========================================================================== */
+:root {
+  --cor-primaria: #4a154b;      /* Roxo escuro elegante */
+  --cor-secundaria: #6b21a8;    /* Roxo médio */
+  --cor-destaque: #ec4899;      /* Rosa/Pink para hover e destaques */
+  --cor-fundo: #f8fafc;         /* Cinza bem claro para o fundo */
+  --cor-card: #ffffff;          /* Branco para áreas de conteúdo */
+  --cor-texto: #1e293b;         /* Cinza escuro para excelente leitura */
+  --cor-texto-suave: #64748b;   /* Cinza médio para detalhes */
+  
+  --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --borda-raio: 8px;
 }
 
-.cabecalho{
-    background-color: rgb(165, 162, 162);
-    color: black;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    font-size: 22px;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    gap: 30%;
+/* ==========================================================================
+   Estilos Gerais do Corpo
+   ========================================================================== */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
-.menu_ul_a{
-    text-decoration: none;
-    color: black;
-    text-align: end;
-    
+/* Container para limitar a largura e centralizar o conteúdo principal */
+main, header, nav, footer {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* ==========================================================================
+   Cabeçalho (Header)
+   ========================================================================== */
+.cabecalho, header {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 #titulo {
-
+  color: var(--cor-primaria);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-p {
-    
+/* ==========================================================================
+   Navegação (Menu)
+   ========================================================================== */
+.menu {
+  background-color: var(--cor-primaria);
+  border-radius: var(--borda-raio);
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra);
 }
 
+.menu ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+}
+
+.menu a {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: var(--cor-destaque);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Imagens
+   ========================================================================== */
 .imgcentro {
-
+  display: block;
+  margin: 0 auto 2rem auto;
+  border-radius: var(--borda-raio);
+  box-shadow: var(--sombra);
+  max-width: 320px;
+  width: 100%;
+  object-fit: cover;
+  border: 4px solid var(--cor-card);
 }
 
-
-ul{
-    font-size: 16px;
+/* ==========================================================================
+   Textos e Conteúdo
+   ========================================================================== */
+.titulo {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--cor-primaria);
+  background-color: #f1f5f9;
+  padding: 1.2rem;
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: 0 var(--borda-raio) var(--borda-raio) 0;
+  margin-bottom: 1.5rem;
 }
 
-li{
-    display: inline-block;
-   
+.texto {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: var(--cor-texto);
 }
 
-li a{
-    font-size: 50px;
-
+/* ==========================================================================
+   Rodapé (Footer)
+   ========================================================================== */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
-button{
-    font-size: 16px;
-    color: rgb(255, 0, 132);
+footer b {
+  color: var(--cor-primaria);
 }
 
-footer{
-     position: fixed;
-     bottom: 0;
-     background-color: rgb(207, 207, 204);
-     font-size: 30px;
-     width: 100%;
-     text-align: center;
+/* ==========================================================================
+   Responsividade (Telas Menores / Celular)
+   ========================================================================== */
+@media (max-width: 600px) {
+  #titulo {
+    font-size: 1.75rem;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
