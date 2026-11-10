@@ -1,0 +1,65 @@
+body { 
+    background-color: white;
+    font-size: 16px;
+}
+
+.cabecalho{
+    background-color: rgb(165, 162, 162);
+    color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 22px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+}
+
+.menu_ul_a{
+    text-decoration: none;
+    color: black;
+    text-align: end;
+    
+}
+
+#titulo {
+
+}
+
+p {
+    
+}
+
+.imgcentro {
+
+}
+
+
+ul{
+    font-size: 16px;
+}
+
+li{
+    display: inline-block;
+   
+}
+
+li a{
+    font-size: 50px;
+
+}
+
+button{
+    font-size: 16px;
+    color: rgb(255, 0, 132);
+}
+
+footer{
+     position: fixed;
+     bottom: 0;
+     background-color: rgb(207, 207, 204);
+     font-size: 30px;
+     width: 100%;
+     text-align: center;
+}
